@@ -8,10 +8,10 @@ set -e
 : ${REPO_NAME?"REPO_NAME Missing"}    # theme repo name (Typically the folder name of the project)
 : ${SSH_USERNAME?"SSH_USERNAME Missing"}    # Username for the SSH connection
 
-# Set repo based on current branch, by default main=production, develop=staging
+# Set repo based on current branch, by default master=production, develop=staging
 # @todo support custom branches
 
-if [ "$CI_BRANCH" == "main" ]
+if [ "$CI_BRANCH" == "master" ]
 then
     target_install=${PROD_INSTALL_IP}
 else
@@ -27,7 +27,7 @@ yarn cache clean && yarn && yarn run build:production
 # Get official list of files/folders that are not meant to be on production if $EXCLUDE_LIST is not set.
 if [[ -z "${EXCLUDE_LIST}" ]];
 then
-    wget https://raw.githubusercontent.com/HOP-Software/sage-roots-10-wpengine-codeship-CD-CI/main/exclude-list.txt
+    wget https://raw.githubusercontent.com/HOP-Software/sage-roots-10-wpengine-codeship-CD-CI/master/exclude-list.txt
 else
     # @todo validate proper url?
     wget ${EXCLUDE_LIST}
