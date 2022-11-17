@@ -8,7 +8,7 @@ Love WordPress? Love WP Engine and want to take advantage of their git deploymen
 
 * You are using Codeship as your CI/CD solution so you _may_ need to make adjustments based on deploybot or another service.
 * You understand how to setup [.git deployments on WP Engine](https://wpengine.com/git/) already.
-* You are using the **master** branch of your repo for **production**
+* You are using the **main** branch of your repo for **production**
 * You are using the **develop** branch of your repo for **staging**
 
 ### Preflight Repo Setup
@@ -24,7 +24,7 @@ When creating your repo, it's important to name the repo using proper folder str
 3. Setup [Environment Variables](https://github.com/linchpin/wpengine-codeship-continuous-deployment#codeship-environment-variables)
     * Environment variables are a great way to add flexibility to the script with out having variables hard coded within this script.
     * You should never have any credentials stored within this or any other repo.
-4. Create deployment pipeline for each branch you are going to add automated deployments to **"master"** and **"staging"**. The pipelines you create are going to utilize the **deployment script below**
+4. Create deployment pipeline for each branch you are going to add automated deployments to **"main"** and **"staging"**. The pipelines you create are going to utilize the **deployment script below**
 5. Do a test push to the repo. The first time you do this within Codeship it may be beneficial to watch all the steps that are displayed within their helpful console.
 
 ### Codeship Environment Variables
@@ -49,11 +49,11 @@ You can customize the actions taken by the deployment script by utilizing the fo
 
 The below build script(s) will check out the linchpin build scripts from github and then run the shell script accordingly based on the environment variables.
 
-In the script below you will see this script is specifcally for **master** if you wanted to use this for staging you would setup a deployment that targets **develop** specifically.
+In the script below you will see this script is specifcally for **main** if you wanted to use this for staging you would setup a deployment that targets **develop** specifically.
 
-### deploying to your pipeline (master|develop)
+### deploying to your pipeline (main|develop)
 
-In order to deploy to your pipeline you can use the following command regardless of master, develop or a custom branch. We are utilizing `https` instead of `SSH` so we can `git clone` the deployment script without requiring authentication.
+In order to deploy to your pipeline you can use the following command regardless of main, develop or a custom branch. We are utilizing `https` instead of `SSH` so we can `git clone` the deployment script without requiring authentication.
 
 ```
 # load our build script from the Hop-Software repo
