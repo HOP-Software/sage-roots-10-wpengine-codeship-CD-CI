@@ -8,4 +8,4 @@ build-scripts
 .gitignore
 .gitkeep
 atlassian-ide-plugin.xml
-wpengine-codeship-continuous-deployment
+sage-roots-10-wpengine-codeship-CD-CI
