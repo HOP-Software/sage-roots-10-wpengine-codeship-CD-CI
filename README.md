@@ -47,7 +47,7 @@ You can customize the actions taken by the deployment script by utilizing the fo
 
 ## Deployment Instructions (The Script)
 
-The below build script(s) will check out the linchpin build scripts from github and then run the shell script accordingly based on the environment variables.
+The below build script(s) will check out the build scripts from github and then run the shell script accordingly based on the environment variables.
 
 In the script below you will see this script is specifcally for **main** if you wanted to use this for staging you would setup a deployment that targets **develop** specifically.
 
