@@ -21,7 +21,7 @@ When creating your repo, it's important to name the repo using proper folder str
 
 1. Log into **codeship.com** or your deployment method of choice.
 2. Connect your **bitbucket**, **github** or **gitlab** repo to codeship. (You will need to authorize access to your repo)
-3. Setup [Environment Variables](https://github.com/linchpin/wpengine-codeship-continuous-deployment#codeship-environment-variables)
+3. Setup [Environment Variables](https://github.com/HOP-Software/sage-roots-10-wpengine-codeship-CD-CI#codeship-environment-variables)
     * Environment variables are a great way to add flexibility to the script with out having variables hard coded within this script.
     * You should never have any credentials stored within this or any other repo.
 4. Create deployment pipeline for each branch you are going to add automated deployments to **"main"** and **"staging"**. The pipelines you create are going to utilize the **deployment script below**
