@@ -58,8 +58,8 @@ In order to deploy to your pipeline you can use the following command regardless
 ```
 # load our build script from the Hop-Software repo
 git clone --branch "master" --depth 50 https://github.com/HOP-Software/sage-roots-10-wpengine-codeship-CD-CI
-chmod 555 ./wpengine-codeship-continuous-deployment/deploy.sh
-./wpengine-codeship-continuous-deployment/deploy.sh
+chmod 555 ./sage-roots-10-wpengine-codeship-CD-CI/deploy.sh
+./sage-roots-10-wpengine-codeship-CD-CI/deploy.sh
 ```
 
 ## Useful Notes
