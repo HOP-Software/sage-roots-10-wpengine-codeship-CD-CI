@@ -11,7 +11,7 @@ set -e
 # Set repo based on current branch, by default master=production, develop=staging
 # @todo support custom branches
 
-if [ "$CI_BRANCH" == "master" ]
+if [ "$CI_BRANCH" == "master" && "main" ]
 then
     target_install=${PROD_INSTALL_IP}
 else
@@ -22,7 +22,7 @@ fi
 composer install
 
 # Install theme packages and compile into production version
-yarn cache clean && yarn && yarn run build:production
+yarn cache clean && yarn && yarn run build
 
 # Get official list of files/folders that are not meant to be on production if $EXCLUDE_LIST is not set.
 if [[ -z "${EXCLUDE_LIST}" ]];
