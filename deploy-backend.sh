@@ -6,7 +6,7 @@ set -e
 : ${WPE_INSTALL?"WPE_INSTALL Missing"}   # subdomain for wpengine install
 : ${REPO_NAME?"REPO_NAME Missing"}       # repo name (Typically the folder name of the project)
 
-# Set repo based on current branch, by default master=production, develop=staging
+# Set repo based on current branch, by default main=production, develop=staging
 # @todo support custom branches
 
 target_wpe_install=${WPE_INSTALL}
@@ -35,7 +35,7 @@ cd ~/clone
 # Get official list of files/folders that are not meant to be on production if $EXCLUDE_LIST is not set.
 if [[ -z "${EXCLUDE_LIST}" ]];
 then
-    wget https://raw.githubusercontent.com/HOP-Software/sage-roots-10-wpengine-codeship-CD-CI/master/exclude-list.txt
+    wget https://raw.githubusercontent.com/HOP-Software/sage-roots-10-wpengine-codeship-CD-CI/main/exclude-list.txt
 else
     # @todo validate proper url?
     wget ${EXCLUDE_LIST}
@@ -78,7 +78,7 @@ fi
 
 # Move the gitignore file to the deployments folder
 cd ~/deployment
-wget --output-document=.gitignore https://raw.githubusercontent.com/HOP-Software/sage-roots-10-wpengine-codeship-CD-CI/master/gitignore-template.txt
+wget --output-document=.gitignore https://raw.githubusercontent.com/HOP-Software/sage-roots-10-wpengine-codeship-CD-CI/main/gitignore-template.txt
 
 # Delete plugins and theme if it exists, and move cleaned version into deployment folder
 rm -rf /wp-content/themes/${REPO_NAME}
