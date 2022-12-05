@@ -11,7 +11,7 @@ set -e
 # Set repo based on current branch, by default master=production, develop=staging
 # @todo support custom branches
 
-if [ "$CI_BRANCH" == "master" || "main" ]
+if [ "$CI_BRANCH" == "main" ]
 then
     target_install=${PROD_INSTALL_IP}
 else
