@@ -119,7 +119,7 @@ cd ../clone && composer install
 if [ "$PROJECT_TYPE" == "theme" ]
 then
   # Install theme packages and compile into production version
-  yarn cache clean && yarn bud clean && yarn && yarn run build
+  yarn cache clean && yarn && yarn run build --clean
 fi
 
 cd ~/deployment
