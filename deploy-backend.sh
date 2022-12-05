@@ -11,7 +11,7 @@ set -e
 
 target_wpe_install=${WPE_INSTALL}
 
-if ["$CI_BRANCH" == "master" && "main" ]
+if ["$CI_BRANCH" == "master" || "main" ]
 then
     repo=production
 else
